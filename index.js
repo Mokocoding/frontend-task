@@ -1,5 +1,10 @@
-const postBtn = document.getElementById('post');
+const pageNames = ['post'];
+const pageButtons = pageNames.map((pageName) => {
+  return document.getElementById(pageName);
+});
 
-postBtn.addEventListener('click', function () {
-  window.location.href = './post/list/index.html';
+pageButtons.forEach((pageButton) => {
+  pageButton.addEventListener('click', function () {
+    window.location.href = `./${this.id}/list/index.html`;
+  });
 });
