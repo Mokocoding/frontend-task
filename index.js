@@ -5,6 +5,6 @@ const pageButtons = pageNames.map((pageName) => {
 
 pageButtons.forEach((pageButton) => {
   pageButton.addEventListener('click', function () {
-    window.location.href = `./${this.id}/list/index.html`;
+    window.location.href = `./pages/${this.id}/list/index.html`;
   });
 });
