@@ -8,22 +8,23 @@
     <script defer src="./index.js"></script>
   </head>
   <body>
-    <div>
+    <h1>post list</h1>
+    <div id="search-box">
+      <input id="search-input" type="text" placeholder="제목 검색" />
+      <button id="search-button">검색</button>
+      <button id="initial-button">초기화</button>
+    </div>
+    <div id="post-table">
       <table id="post-list">
         <tbody id="post-head">
           <tr>
             <th>id</th>
             <th>제목</th>
-            <th>본문</th>
             <th>생성일</th>
             <th>수정일</th>
           </tr>
         </tbody>
-        <tbody>
-          <tr id="post-item">
-            <td id="post-id">asd</td>
-          </tr>
-        </tbody>
+        <tbody id="post-item"></tbody>
       </table>
     </div>
   </body>

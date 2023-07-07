@@ -1,6 +1,19 @@
 @charset "utf-8";
 
-body div > * {
+body h1 {
+  text-align: center;
+}
+
+#search-box {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#search-input {
+  width: 300px;
+}
+
+#post-table > * {
   margin: 0 auto;
 }
 
@@ -21,17 +34,6 @@ body div > * {
   padding-right: 60px;
 }
 
-#post-id {
-}
-
-#post-title {
-}
-
-#post-description {
-}
-
-#post-created-at {
-}
-
-#post-updated-at {
+#post-item > * {
+  text-align: center;
 }
