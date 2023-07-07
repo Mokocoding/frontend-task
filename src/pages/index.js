@@ -1,3 +1,5 @@
+'use strict';
+
 const pageNames = ['post'];
 const pageButtons = pageNames.map((pageName) => {
   return document.getElementById(pageName);
