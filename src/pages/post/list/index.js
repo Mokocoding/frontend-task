@@ -85,13 +85,9 @@ async function createPostTable() {
   });
 }
 
-const initialButton = document.getElementById('initial-button');
-
-initialButton.addEventListener('click', async function () {
-  await createPostTable();
-});
-
 const searchButton = document.getElementById('search-button');
+const createButton = document.getElementById('create-button');
+const initialButton = document.getElementById('initial-button');
 
 searchButton.addEventListener('click', async function () {
   const searchInput = document.getElementById('search-input');
@@ -113,6 +109,14 @@ searchButton.addEventListener('click', async function () {
 
     postItemElement.appendChild(postElement);
   });
+});
+
+createButton.addEventListener('click', async function () {
+  window.location.href = '../create/index.html';
+});
+
+initialButton.addEventListener('click', async function () {
+  await createPostTable();
 });
 
 createPostTable();
