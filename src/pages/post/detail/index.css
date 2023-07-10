@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+#head {
+  margin: 0 auto;
+  width: 500px;
+  margin-bottom: 15px;
+}
+
+#head h1 {
+  text-align: center;
+}
+
+#post-list-button {
+  text-align: left;
+}
+
+#post-update-button {
+  float: right;
+}
+
+#post {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#title {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+#title-text {
+  word-break: break-word;
+  line-height: 150%;
+}
+
+#description > * {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  vertical-align: text-top;
+  width: 500px;
+  height: 600px;
+  margin-bottom: 20px;
+}
+
+#description-text {
+  white-space: pre-wrap;
+  line-height: 200%;
+}

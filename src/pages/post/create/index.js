@@ -1,3 +1,5 @@
+'use strict';
+
 async function fetchCreatePost(createPost) {
   const response = await fetch('http://3.39.191.68:8080/api/posts', {
     method: 'POST',

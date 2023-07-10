@@ -51,6 +51,10 @@ function getPostElement(post) {
 
   const tr = document.createElement('tr');
   tr.setAttribute('post-id', id);
+  tr.setAttribute(
+    'onClick',
+    `location.href="../detail/index.html?id=${post.id}"`
+  );
 
   const idElement = getIdElement(id);
   const titleElement = getTitleElement(title);
