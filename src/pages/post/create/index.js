@@ -29,6 +29,14 @@ async function fetchCreatePost(createPost) {
     throw new Error(messages);
   }
 
+  if (status >= 400) {
+    console.error(responseJson);
+
+    const { messages } = responseJson;
+
+    throw new Error(messages);
+  }
+
   return responseJson.post;
 }
 

@@ -40,6 +40,14 @@ async function fetchPost(id) {
     throw createError(statusCode, messages);
   }
 
+  if (status >= 400) {
+    console.error(responseJson);
+
+    const { messages } = responseJson;
+
+    throw new Error(messages);
+  }
+
   return responseJson.post;
 }
 
@@ -63,7 +71,7 @@ async function viewPost() {
   });
 
   postUpdateButton.addEventListener('click', () => {
-    window.location.href = '../update/index.html';
+    window.location.href = `../update/index.html?id=${postId}`;
   });
 
   try {

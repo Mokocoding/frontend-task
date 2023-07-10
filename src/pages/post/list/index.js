@@ -11,7 +11,17 @@ async function fetchPostList(title = '') {
     }
   );
 
+  const { status } = response;
+
   const responseJson = await response.json();
+
+  if (status >= 400) {
+    console.error(responseJson);
+
+    const { messages } = responseJson;
+
+    throw new Error(messages);
+  }
 
   return responseJson.posts;
 }
