@@ -18,6 +18,10 @@
   float: right;
 }
 
+#post-delete-button {
+  float: right;
+}
+
 #post {
   width: 500px;
   margin: 0 auto;

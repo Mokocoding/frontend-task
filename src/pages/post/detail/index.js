@@ -43,12 +43,60 @@ async function fetchPost(id) {
   if (status >= 400) {
     console.error(responseJson);
 
+    const { messages, statusCode } = responseJson;
+
+    throw createError(statusCode, messages);
+  }
+
+  return responseJson.post;
+}
+
+async function fetchDeletePost(id) {
+  const response = await fetch(`http://3.39.191.68:8080/api/posts/${id}`, {
+    method: 'DELETE',
+  });
+
+  const { status } = response;
+
+  if (status === 204) {
+    return;
+  }
+
+  console.log(response);
+
+  const responseJson = await response.json();
+
+  if (status === 400) {
+    console.error(responseJson);
+
     const { messages } = responseJson;
 
     throw new Error(messages);
   }
 
-  return responseJson.post;
+  if (status === 404) {
+    console.error(responseJson);
+
+    const { messages } = responseJson;
+
+    throw new Error(messages);
+  }
+
+  if (status === 500) {
+    console.error(responseJson);
+
+    const { messages } = responseJson;
+
+    throw new Error(messages);
+  }
+
+  if (status >= 400) {
+    console.error(responseJson);
+
+    const { messages } = responseJson;
+
+    throw new Error(messages);
+  }
 }
 
 async function viewPost() {
@@ -65,6 +113,7 @@ async function viewPost() {
 
   const postListButton = document.getElementById('post-list-button');
   const postUpdateButton = document.getElementById('post-update-button');
+  const postDeleteButton = document.getElementById('post-delete-button');
 
   postListButton.addEventListener('click', () => {
     window.location.href = '../list/index.html';
@@ -72,6 +121,21 @@ async function viewPost() {
 
   postUpdateButton.addEventListener('click', () => {
     window.location.href = `../update/index.html?id=${postId}`;
+  });
+
+  postDeleteButton.addEventListener('click', async function () {
+    try {
+      await fetchDeletePost(postId);
+
+      alert('정상적으로 삭제되었습니다.');
+
+      window.location.href = '../list/index.html';
+    } catch (error) {
+      console.log(error);
+      const { message } = error;
+
+      alert(message);
+    }
   });
 
   try {
