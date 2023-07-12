@@ -1,6 +1,8 @@
 "use strict";
 
 const baseURL = 'http://3.39.191.68:8080/'
+const 
+
 
 //       console.log(posttitle,postdesc,postbtn);
 
@@ -27,6 +29,7 @@ console.log(res);
 }
 
 function postview() {
+    location.href= "./postview.html";
     fetch(`${baseURL}api/posts`, {
         method: "GET",
         headers: {
@@ -36,6 +39,7 @@ function postview() {
     .then((res) => res.json())
     .then((res) => {
         console.log(res);
+        document.getElementById("title").innerHTML = res;
     })
 }
 
@@ -78,11 +82,11 @@ function editdesc() {
 
 }
 
-function deletedesc() {
+async function deletedesc () {
     const postid = document.querySelector("#postid").value;
 
         
-    fetch (`${baseURL}api/posts/${postid}`, {
+    await fetch (`${baseURL}api/posts/${postid}`, {
          method: "DELETE",
          headers: {
          "Content-Type": "application/json"
@@ -95,3 +99,4 @@ function deletedesc() {
         
 
 }
+
