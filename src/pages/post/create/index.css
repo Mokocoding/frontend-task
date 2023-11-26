@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+#head {
+  margin: 0 auto;
+  width: 500px;
+  margin-bottom: 15px;
+}
+
+#head h1 {
+  text-align: center;
+}
+
+#post {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+#title > * {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+#description > * {
+  vertical-align: text-top;
+  width: 500px;
+  height: 600px;
+  margin-bottom: 20px;
+}
+
+#create-button {
+  margin-left: 90%;
+}

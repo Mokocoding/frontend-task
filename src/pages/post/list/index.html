@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <h1>post list</h1>
+    <div id="search-box">
+      <input id="search-input" type="text" placeholder="제목 검색" />
+      <button id="search-button">검색</button>
+      <button id="create-button">post 생성</button>
+      <button id="initial-button">초기화</button>
+    </div>
+    <div id="post-table">
+      <table id="post-list">
+        <tbody id="post-head">
+          <tr>
+            <th>id</th>
+            <th>제목</th>
+            <th>생성일</th>
+            <th>수정일</th>
+          </tr>
+        </tbody>
+        <tbody id="post-item"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
